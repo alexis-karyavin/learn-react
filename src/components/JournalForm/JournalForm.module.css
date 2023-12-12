@@ -1,0 +1,51 @@
+.journal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.journal-form__input {
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+
+.journal-form__input:focus-visible {
+  outline: none;
+}
+
+.journal-form__title {
+  height: 40px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.journal-form__date {
+  height: 40px;
+  font-size: 16px;
+  position: relative;
+  padding-left: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.journal-form__date::-webkit-calendar-picker-indicator {
+  background-color: transparent;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+}
+
+.journal-form__post {
+  height: 100%;
+  resize: none;
+  font-size: 16px;
+  line-height: 28px;
+  height: 500px;
+}
+
+.journal-form__title-wrapper {
+  position: relative;
+}

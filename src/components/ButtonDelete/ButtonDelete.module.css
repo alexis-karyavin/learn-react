@@ -1,0 +1,31 @@
+.button-delete {
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 100%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.button-delete:hover {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.button-delete svg path {
+  stroke: rgba(255, 255, 255, 0.1);
+}
+
+.button-delete svg {
+  stroke: rgba(255, 255, 255, 0.1);
+}
+
+button-delete:hover svg {
+  stroke: rgba(255, 255, 255, 0.5);
+}

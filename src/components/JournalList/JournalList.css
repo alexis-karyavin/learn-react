@@ -1,0 +1,7 @@
+.journal-list .card-button {
+  width: 100%;
+}
+
+.journal-list .card-button:not(:last-child) {
+  margin-bottom: 20px;
+}
