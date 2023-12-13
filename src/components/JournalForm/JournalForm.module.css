@@ -11,6 +11,10 @@
   border: none;
 }
 
+.journal-form__input--invalid {
+  border: 1px solid red;
+}
+
 .journal-form__input:focus-visible {
   outline: none;
 }
