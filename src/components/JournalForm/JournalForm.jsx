@@ -8,13 +8,20 @@ import Button from '@/components/Button/Button';
 import ButtonDelete from '../ButtonDelete/ButtonDelete';
 import { UserContext } from '../../context/user-context';
 
-function JournalForm({ addListItem }) {
+function JournalForm({ addListItem, data, deleteItem }) {
   const [formState, dispatchForm] = useReducer(formReducer, INITIAL_STATE);
   const { isValid, isFormReadyToSubmit, values } = formState;
   const titleRef = useRef();
   const dateRef = useRef();
   const textRef = useRef();
   const { userId } = useContext(UserContext);
+
+  useEffect(() => {
+    dispatchForm({
+      type: 'SET_VALUE',
+      payload: { ...data }
+    });
+  }, [data]);
 
   useEffect(() => {
     let timerId = null;
@@ -70,7 +77,6 @@ function JournalForm({ addListItem }) {
   return (
     <>
       <form className={cn(styles['journal-form'])} onSubmit={savedForm}>
-        {userId}
         <div className={cn(styles['journal-form__title-wrapper'])}>
           <input
             ref={titleRef}
@@ -86,7 +92,7 @@ function JournalForm({ addListItem }) {
             onInput={onInput}
           />
 
-          <ButtonDelete />
+          <ButtonDelete onClick={() => deleteItem(values.id)} />
         </div>
 
         <input
@@ -96,7 +102,9 @@ function JournalForm({ addListItem }) {
             styles['journal-form__date'],
             { [styles['journal-form__input--invalid']]: !isValid.date }
           )}
-          value={values.date}
+          value={
+            values.date ? new Date(values.date).toISOString().slice(0, 10) : ''
+          }
           type="date"
           name="date"
           onInput={onInput}

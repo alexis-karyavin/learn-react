@@ -36,7 +36,7 @@ export function formReducer(state, action) {
     case 'CLEAR':
       return {
         ...state,
-        values: INITIAL_STATE.values,
+        values: { ...INITIAL_STATE.values, userId: state.values.userId },
         isFormReadyToSubmit: false
       };
 

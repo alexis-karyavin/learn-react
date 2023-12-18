@@ -1,10 +1,11 @@
 import styles from './ButtonDelete.module.css';
 import Button from '@/components/Button/Button';
 
-function ButtonDelete() {
+function ButtonDelete({ onClick }) {
   return (
     <Button
       className={styles['button-delete']}
+      onClick={onClick}
       text={
         <svg
           xmlns="http://www.w3.org/2000/svg"
